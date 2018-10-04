@@ -1,0 +1,103 @@
+{
+	"Moviment":
+	[
+	    {
+	        "ID_Moviment": 0,   
+			
+            "Nombre_Moviment":"Pedo",              
+            "Maximo_Moviment": 15,            
+            "Cansancio_Moviment": 1,             
+	        "Dano_Moviment": 2,               
+	        "Tipo1_Moviment":"Envenamiento",          
+	        "Tipo2_Moviment":"Nada",                    
+	        "Descripcion_Moviment":"El personaje tira un pedo que envenena al enemigo por 2 turnos"  
+	    },
+        {
+	        "ID_Moviment": 1,    
+			
+            "Nombre_Moviment":"Eructo",              
+            "Maximo_Moviment": 10,            
+            "Cansancio_Moviment": 1,             
+	        "Dano_Moviment": 2,               
+	        "Tipo1_Moviment":"Envenamiento",          
+	        "Tipo2_Moviment":"Nada",                    
+	        "Descripcion_Moviment":"El personaje tira un pedo que envenena al enemigo por 2 turnos"  
+	    },
+	    {
+	        "ID_Moviment": 2,    
+			
+            "Nombre_Moviment":"Tristeza",              
+            "Maximo_Moviment": 11,            
+            "Cansancio_Moviment": 1,             
+	        "Dano_Moviment": 0,               
+	        "Tipo1_Moviment":"Envenamiento",          
+	        "Tipo2_Moviment":"Nada",                    
+	        "Descripcion_Moviment":"El personaje tira un pedo que envenena al enemigo por 2 turnos"  
+	    }   
+	],        
+	"Objecte":
+	[       
+		{   
+			"ID_Objecte": 0, 
+
+			"Nombre_Objecte":"Taco",
+			"Sprite_Objecte":"Nada",
+			"Descripcion_Objecte":"Nada"
+		},
+		{   
+			"ID_Objecte": 1, 
+
+			"Nombre_Objecte":"Burger",
+			"Sprite_Objecte":"Nada",
+			"Descripcion_Objecte":"Nada"
+
+		},
+		{   
+			"ID_Objecte": 2, 
+
+			"Nombre_Objecte":"MacPoyo",
+			"Sprite_Objecte":"Nada",
+			"Descripcion_Objecte":"Nada"
+		}    
+	],        
+	"Enemic":
+	[       
+		{     
+			"ID_Enemic": 0, 
+
+			"Nombre_Enemic":"Farola",
+			"Sprite_Enemic":"Nada",
+			"Descripcion_Enemic":"Nada",
+
+			"Velozidad_Enemic":1,
+			"Defensa_Enemic":10,
+			"Ataque_Enemic":7,
+			"Vida_Enemic":11
+		},
+		{     
+			"ID_Enemic": 1, 
+
+			"Nombre_Enemic":"Roquero",
+			"Sprite_Enemic":"Nada",
+			"Descripcion_Enemic":"Nada",
+
+			"Velozidad_Enemic":10,
+			"Defensa_Enemic":5,
+			"Ataque_Enemic":10,
+			"Vida_Enemic":11
+		},
+		{     
+			"ID_Enemic": 2, 
+
+			"Nombre_Enemic":"Vendedor de tacos",
+			"Sprite_Enemic":"Nada",
+			"Descripcion_Enemic":"Nada",
+
+			"Velozidad_Enemic":1,
+			"Defensa_Enemic":0,
+			"Ataque_Enemic":4,
+			"Vida_Enemic":20
+		}
+	]
+}
+	
