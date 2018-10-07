@@ -36,7 +36,6 @@ public class Transfer : MonoBehaviour
 		Debug.Log(transfer_enemigos_final.Enemic[1].Nombre_Enemic);
 		Debug.Log(transfer_guardado.Guardat[1].Nombre_Personje_Guardat);
 	}*/
-
 }
 
 [Serializable] //Variables serializadas SOLO_LECTURA
