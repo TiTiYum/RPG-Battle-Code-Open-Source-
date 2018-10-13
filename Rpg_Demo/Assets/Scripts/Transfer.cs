@@ -103,7 +103,12 @@ public class Enemigos_Json : ISerializationCallbackReceiver
 [Serializable] //Variables serializadas GUARDADO
 public class Guardado_Json : ISerializationCallbackReceiver
 {
+
+	public int Slot_ID_Guardat;
+
+
 	public int ID_Guardat;
+	public int ID_Enemigo_Guardat;
 
 	public string Nombre_Personje_Guardat;
 	public int Nivel_Personaje_Guardat;

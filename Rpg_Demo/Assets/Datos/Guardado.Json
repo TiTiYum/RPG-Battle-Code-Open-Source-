@@ -2,7 +2,10 @@
 	"Guardat":
 	[
 	 {
+	 "Slot_ID_Guardat":0,
+
 	 "ID_Guardat":0,
+	 "ID_Enemigo_Guardat":10,
 
 	 "Nombre_Personje_Guardat": "Pepito",
 	 "Nivel_Personaje_Guardat": 10,
@@ -29,7 +32,10 @@
 
 	 },
 	 {
+	 "Slot_ID_Guardat":1,
+
 	 "ID_Guardat":1,
+	 "ID_Enemigo_Guardat":10,
 
 	 "Nombre_Personje_Guardat": "TiTi",
 	 "Nivel_Personaje_Guardat": 0,
@@ -56,7 +62,10 @@
 
 	 },
 	 {
+	 "Slot_ID_Guardat":2,
+
 	 "ID_Guardat":2,
+	 "ID_Enemigo_Guardat":10,
 
 	 "Nombre_Personje_Guardat": "ToTo",
 	 "Nivel_Personaje_Guardat": 2,
@@ -80,7 +89,128 @@
 
 	 "ID_Movimient_3_Guardat":0,
 	 "Estamina_Movimient_3_Guardat":10
+	 },
+	 {
+	 "Slot_ID_Guardat":3,
 
+	 "ID_Guardat":3,
+	 "ID_Enemigo_Guardat":10,
+
+	 "Nombre_Personje_Guardat": "ToTo",
+	 "Nivel_Personaje_Guardat": 2,
+	 "XP_Personaje_Guardat": 700,
+
+
+	 "Dano_Jugador_Guardat":6,
+	 "Velozidad_Jugador_Guardat":1,
+	 "Defensa_Jugador_Guardat":10,
+	 "Cansancio_Jugador_Guardat":8,
+
+
+	 "Vida_Maxima_Jugador_Guardat":20,
+	 "Vida_Jugador_Guardat":5,
+
+	 "ID_Movimient_1_Guardat":2,
+	 "Estamina_Movimient_1_Guardat":10,
+
+	 "ID_Movimient_2_Guardat":1,
+	 "Estamina_Movimient_2_Guardat":10,
+
+	 "ID_Movimient_3_Guardat":0,
+	 "Estamina_Movimient_3_Guardat":10
+	 },
+	 {
+	 "Slot_ID_Guardat":4,
+
+	 "ID_Guardat":4,
+	 "ID_Enemigo_Guardat":10,
+
+	 "Nombre_Personje_Guardat": "ToTo",
+	 "Nivel_Personaje_Guardat": 2,
+	 "XP_Personaje_Guardat": 700,
+
+
+	 "Dano_Jugador_Guardat":6,
+	 "Velozidad_Jugador_Guardat":1,
+	 "Defensa_Jugador_Guardat":10,
+	 "Cansancio_Jugador_Guardat":8,
+
+
+	 "Vida_Maxima_Jugador_Guardat":20,
+	 "Vida_Jugador_Guardat":5,
+
+	 "ID_Movimient_1_Guardat":2,
+	 "Estamina_Movimient_1_Guardat":10,
+
+	 "ID_Movimient_2_Guardat":1,
+	 "Estamina_Movimient_2_Guardat":10,
+
+	 "ID_Movimient_3_Guardat":0,
+	 "Estamina_Movimient_3_Guardat":10
+	 },
+	 {
+	 "Slot_ID_Guardat":5,
+
+	 "ID_Guardat":5,
+	 "ID_Enemigo_Guardat":10,
+
+	 "Nombre_Personje_Guardat": "ToTo",
+	 "Nivel_Personaje_Guardat": 2,
+	 "XP_Personaje_Guardat": 700,
+
+
+	 "Dano_Jugador_Guardat":6,
+	 "Velozidad_Jugador_Guardat":1,
+	 "Defensa_Jugador_Guardat":10,
+	 "Cansancio_Jugador_Guardat":8,
+
+
+	 "Vida_Maxima_Jugador_Guardat":20,
+	 "Vida_Jugador_Guardat":5,
+
+	 "ID_Movimient_1_Guardat":2,
+	 "Estamina_Movimient_1_Guardat":10,
+
+	 "ID_Movimient_2_Guardat":1,
+	 "Estamina_Movimient_2_Guardat":10,
+
+	 "ID_Movimient_3_Guardat":0,
+	 "Estamina_Movimient_3_Guardat":10
+	 },
+	 {
+	 "Slot_ID_Guardat":6,
+
+	 "ID_Guardat":6,
+	 "ID_Enemigo_Guardat":10,
+
+	 "Nombre_Personje_Guardat": "ToTo",
+	 "Nivel_Personaje_Guardat": 2,
+	 "XP_Personaje_Guardat": 700,
+
+
+	 "Dano_Jugador_Guardat":6,
+	 "Velozidad_Jugador_Guardat":1,
+	 "Defensa_Jugador_Guardat":10,
+	 "Cansancio_Jugador_Guardat":8,
+
+
+	 "Vida_Maxima_Jugador_Guardat":20,
+	 "Vida_Jugador_Guardat":5,
+
+	 "ID_Movimient_1_Guardat":2,
+	 "Estamina_Movimient_1_Guardat":10,
+
+	 "ID_Movimient_2_Guardat":1,
+	 "Estamina_Movimient_2_Guardat":10,
+
+	 "ID_Movimient_3_Guardat":0,
+	 "Estamina_Movimient_3_Guardat":10
+	 }
+	],
+	"Slot_Inlecturo_Guardat":
+	[
+	 {
+	 "Guardados":10
 	 }
 	]
 }

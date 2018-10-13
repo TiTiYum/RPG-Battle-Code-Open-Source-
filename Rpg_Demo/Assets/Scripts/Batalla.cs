@@ -9,23 +9,26 @@ public class Batalla : MonoBehaviour
 {
 	   //OTROS SCRIPTSz
 	public Transfer _transfer;
+	public Datos_Mapa _datos_mapa;
 
 	public Text Nombre_Jugador_TxT,
-		Nombre_Enemigo_TxT, 
-		Atake_Primero_TxT, 
-		Atake_Segundo_TxT,  
+		Nombre_Enemigo_TxT,
+		Atake_Primero_TxT,
+		Atake_Segundo_TxT,
 		Atake_Tercero_TxT,
-        Atake_Primero_Estamina_TxT,
-        Atake_Segundo_Estamina_TxT,
-        Atake_Tercero_Estamina_TxT,
-        Velozidad_Estadistica_Jugador_TxT,
-        Dano_Estadistica_Jugador_TxT,
-        Defensa_Estadistica_Jugador_TxT,
+		Atake_Primero_Estamina_TxT,
+		Atake_Segundo_Estamina_TxT,
+		Atake_Tercero_Estamina_TxT,
+		Velozidad_Estadistica_Jugador_TxT,
+		Dano_Estadistica_Jugador_TxT,
+		Defensa_Estadistica_Jugador_TxT,
 		Cansancio_Estadistica_Jugador_TxT,
 		Velozidad_Estadistica_Enemigo_TxT,
 		Dano_Estadistica_Enemigo_TxT,
 		Defensa_Estadistica_Enemigo_TxT,
-		Cansancio_Estadistica_Enemigo_TxT;
+		Cansancio_Estadistica_Enemigo_TxT,
+		Nivel_Enemigo_TxT,
+		Nivel_Jugador_TxT;
 
 	private int Atake_Primero_Dano_int,
 		Atake_Segundo_Dano_int,
@@ -41,7 +44,7 @@ public class Batalla : MonoBehaviour
 		Movimiento_2_int,
 		Movimiento_3_int,
 		minimo_de_nivel_enemigo,
-		maximo_de_nivel_enemigo,
+		maximo_de_nivel_enemigo ,
 		Velozidad_Enemigo,
 		Dano_Enemigo,
 		Defensa_Enemigo,
@@ -94,9 +97,7 @@ public class Batalla : MonoBehaviour
 		Players_Selecionados,
 		Estats_Enemigo_Selecionados,
 		Estats_Jugador_Selecionados,
-		movimientos_Selecionados,
-		Enemigo_Calcular_Vida_bool,
-		Jugador_Calcular_Vida_bool;
+		movimientos_Selecionados;
 	                   
 	public Image Barra_De_Vida_Enemigo,
         Barra_De_Vida_Jugador;
@@ -111,12 +112,16 @@ public class Batalla : MonoBehaviour
 		Estadisticas_Bool = false;
 		Enemigo_1r = false;
 		Jugador_1r = false;
-		Enemigo_Calcular_Vida_bool = false; 
-		Nivel_Enemigo = Random.Range(minimo_de_nivel_enemigo, maximo_de_nivel_enemigo);
 	}
 	void Update ()
     {
 		Calcular_Datos();
+		Barra_Vida();
+		//Debug.Log("Vida J: " + Vida_Final_Jugador);
+		//Debug.Log("Vida E: " + Vida_Final_Enemigo + "Vida inicial: " + Vida_Enemigo);
+		//Debug.Log("Calculo1: " + Calculo3_Enemigo);
+		//Debug.Log("Calculo2: " + Calculo4_Enemigo);
+		//Debug.Log("Nivel: " + Nivel_Enemigo);
 	}
 
 	public void Ataque1 ()
@@ -138,7 +143,7 @@ public class Batalla : MonoBehaviour
 						Dano_Final_Jugador = Calculo1_Jugador * Calculo2_Jugador;
 
 						Jugador_1r = true;
-
+						Atacar();
 						//Debug.Log("Dano_Final: " + Dano_Final_Jugador);
 						//Debug.Log("Calculo1: " + Calculo1_Jugador + " Calculo2: " + Calculo2_Jugador);
 					}
@@ -154,6 +159,7 @@ public class Batalla : MonoBehaviour
 			{
 				//Debug.Log("Enemigo mas rapido: " + Velozidad_Enemigo + " Jugador: " + Velozidad_Jugador);
 				Enemigo_1r = true;
+				Atacar();
 			}
 		}
 	}
@@ -175,7 +181,7 @@ public class Batalla : MonoBehaviour
 						Dano_Final_Jugador = Calculo1_Jugador * Calculo2_Jugador;
 
 						Jugador_1r = true;
-
+						Atacar();
 						//Debug.Log("Dano_Final: " + Dano_Final_Jugador);
 						//Debug.Log("Calculo1: " + Calculo1_Jugador + " Calculo2: " + Calculo2_Jugador);
 					}
@@ -191,6 +197,7 @@ public class Batalla : MonoBehaviour
 			{
 				//Debug.Log("Enemigo mas rapido: " + Velozidad_Enemigo + " Jugador: " + Velozidad_Jugador);
 				Enemigo_1r = true;
+				Atacar();
 			}
 		}
 	}
@@ -214,7 +221,7 @@ public class Batalla : MonoBehaviour
 						Dano_Final_Jugador = Calculo1_Jugador * Calculo2_Jugador;
 
 						Jugador_1r = true;
-
+						Atacar();
 						//Debug.Log("Dano_Final: " + Dano_Final_Jugador);
 						//Debug.Log("Calculo1: " + Calculo1_Jugador + " Calculo2: " + Calculo2_Jugador);
 					}
@@ -230,6 +237,7 @@ public class Batalla : MonoBehaviour
 			{
 				//Debug.Log("Enemigo mas rapido: " + Velozidad_Enemigo + " Jugador: " + Velozidad_Jugador);
 				Enemigo_1r = true;
+				Atacar();
 			}
 		}
 	}
@@ -280,43 +288,25 @@ public class Batalla : MonoBehaviour
 			Debug.Log("Calculo1: " + Calculo1 + " Calculo2: " + Calculo2);
 		}*/
 	}
-	public void Enemigo_Calcular_Vida()
+	public void Calcular_Vida_final()
 	{
-		if (!Enemigo_Calcular_Vida_bool)
-		{
 			Calculo3_Enemigo = Vida_Enemigo * Defensa_Enemigo;
 			Calculo4_Enemigo = Nivel_Enemigo % 100;
-
 			Vida_maxima_Enemigo_Calculo = Calculo3_Enemigo * Calculo4_Enemigo;
 			Vida_Final_Enemigo = Calculo3_Enemigo * Calculo4_Enemigo;
-			//Debug.Log("Vida Enemigo: " + Vida_Final_Enemigo);
-			Enemigo_Calcular_Vida_bool = true;
-		}
-	}
-	public void Jugador_Calcular_Vida()
-	{
-		if (!Jugador_Calcular_Vida_bool)
-		{
 			Calculo3_Jugador = Vida_Jugador * Defensa_Jugador;
 			Calculo4_Jugador = Nivel_Jugador % 100;
-
 			Vida_maxima_Jugador_Calculo = Calculo3_Jugador * Calculo4_Jugador;
 			Vida_Final_Jugador = Calculo3_Jugador * Calculo4_Jugador;
-			//Debug.Log("Vida Jugador: " + Vida_Final_Jugador);
-			Jugador_Calcular_Vida_bool = true;
-		}
 	}
-	public void Restar_Vida_Jugador()
+	public void Barra_Vida()
 	{
 		//Barra_De_Vida_Jugador = GetComponent<Image>();
 		Barra_De_Vida_Jugador.fillAmount = Vida_Final_Jugador / Vida_maxima_Jugador_Calculo;
-		Debug.Log("Vida_Actual_J: " + Vida_Final_Jugador + " Vida_Maxima_J: " + Vida_maxima_Jugador_Calculo);
-	}
-	public void Restar_Vida_Enemigo()
-	{
+		//Debug.Log("Vida_Actual_J: " + Vida_Final_Jugador + " Vida_Maxima_J: " + Vida_maxima_Jugador_Calculo);
 		//Barra_De_Vida_Enemigo = GetComponent<Image>();
 		Barra_De_Vida_Enemigo.fillAmount = Vida_Final_Enemigo / Vida_maxima_Enemigo_Calculo;
-		Debug.Log("Vida_Actual_E: " + Vida_Final_Enemigo + " Vida_Maxima_E: " + Vida_maxima_Enemigo_Calculo);
+		//Debug.Log("Vida_Actual_E: " + Vida_Final_Enemigo + " Vida_Maxima_E: " + Vida_maxima_Enemigo_Calculo);
 	}
 	public void Calcular_Datos()
 	{
@@ -390,13 +380,6 @@ public class Batalla : MonoBehaviour
 		if (!La_Partida_ah_empezado)
 		{
 			//Mira si se ah selecionado los enemigos/jugador en pantalla procesados si es asin el if seguira
-			if (!Players_Selecionados)
-			{
-				//Mira si el nombre esta selecionado y lo coloca
-					Nombre_Enemigo_TxT.text = _transfer.transfer_enemigos_final.Enemic[Enemigo_Selecion_int].Nombre_Enemic;
-					Nombre_Jugador_TxT.text = _transfer.transfer_guardado.Guardat[Jugador_Selecion_int].Nombre_Personje_Guardat;
-				Players_Selecionados = true;
-			}
 			if (!Estats_Enemigo_Selecionados)
 			{
 				//Debug.Log("No ahy nada");
@@ -404,9 +387,15 @@ public class Batalla : MonoBehaviour
 				Defensa_Enemigo = _transfer.transfer_enemigos_final.Enemic[Enemigo_Selecion_int].Defensa_Enemic;
 				Dano_Enemigo = _transfer.transfer_enemigos_final.Enemic[Enemigo_Selecion_int].Ataque_Enemic;
 				Vida_Enemigo = _transfer.transfer_enemigos_final.Enemic[Enemigo_Selecion_int].Vida_Enemic;
-
+			
+				minimo_de_nivel_enemigo = _datos_mapa.Minimo_Nivel_Enemigos;
+				maximo_de_nivel_enemigo = _datos_mapa.Maximo_Nivel_Enemigos;
 				maximo_de_nivel_enemigo = maximo_de_nivel_enemigo + 1;
+				Nivel_Enemigo = Random.Range(minimo_de_nivel_enemigo, maximo_de_nivel_enemigo);
 
+				Debug.Log("minimo: " + minimo_de_nivel_enemigo);
+				Debug.Log("maximo: " + maximo_de_nivel_enemigo);
+				Debug.Log("mNivel: " + Nivel_Enemigo);
 				Cansancio_Enemigo = 0;
 
 				Velozidad_Estadistica_Enemigo_TxT.text = Velozidad_Enemigo + "E";
@@ -415,6 +404,15 @@ public class Batalla : MonoBehaviour
 				Cansancio_Estadistica_Enemigo_TxT.text = Cansancio_Enemigo + "E";
 
 				Estats_Enemigo_Selecionados = true;
+			}
+			if (!Players_Selecionados)
+			{
+				//Mira si el nombre esta selecionado y lo coloca
+				Nombre_Enemigo_TxT.text = _transfer.transfer_enemigos_final.Enemic[Enemigo_Selecion_int].Nombre_Enemic;
+				Nombre_Jugador_TxT.text = _transfer.transfer_guardado.Guardat[Jugador_Selecion_int].Nombre_Personje_Guardat;
+				Nivel_Enemigo_TxT.text = "" + Nivel_Enemigo;
+				Nivel_Jugador_TxT.text = "" + Nivel_Jugador;
+				Players_Selecionados = true;
 			}
 			if (!movimientos_Selecionados)
 			{
@@ -448,97 +446,65 @@ public class Batalla : MonoBehaviour
 				Defensa_Estadistica_Jugador_TxT.text = Defensa_Jugador + "J";
 				Dano_Estadistica_Jugador_TxT.text = Dano_Jugador + "J";
 
-				Enemigo_Calcular_Vida();
-				Jugador_Calcular_Vida();
+				
+				Calcular_Vida_final();
 				//Debug.Log("1");
 				Estadisticas_Bool = true;
 			}
-			if (Jugador_1r)
+		}
+	}
+	public void Atacar()
+	{
+		if (Jugador_1r)
+		{
+			Vida_Final_Enemigo = Vida_Final_Enemigo - Dano_Final_Jugador;
+
+			if (Vida_Final_Jugador <= 0)
 			{
-				Vida_Final_Enemigo = Vida_Final_Enemigo - Dano_Final_Jugador;
-
-				Debug.Log("Vida Enemigo: " + Vida_Final_Enemigo);
-				;
-				//Restar_Vida_Jugador();
-				Restar_Vida_Enemigo();
-
-				if (Vida_Final_Jugador <= 0)
-				{
-					Vida_Final_Jugador = 0;
-					Debug.Log("Gano el Enemigo");
-					Debug.Log("Vida Jugador: " + Vida_Final_Jugador);
-					Debug.Log("Vida Enemigo: " + Vida_Final_Enemigo);
-				}
-				if (Vida_Final_Enemigo <= 0)
-				{
-					Vida_Final_Enemigo = 0;
-					Debug.Log("Gano el jugador");
-					Debug.Log("Vida Jugador: " + Vida_Final_Jugador);
-					Debug.Log("Vida Enemigo: " + Vida_Final_Enemigo);
-				}
-
-				Enemigo_2r = true;
-				Jugador_1r = false;
+				Vida_Final_Jugador = 0;
 			}
-			if (Enemigo_1r)
+			if (Vida_Final_Enemigo <= 0)
 			{
-				Enemigo_Ataque();
-				Vida_Final_Jugador = Vida_Final_Jugador - Dano_Final_Enemigo;
-
-				Debug.Log("Vida Jugador: " + Vida_Final_Jugador);
-
-				Restar_Vida_Jugador();
-				//Restar_Vida_Enemigo();
-
-				if (Vida_Final_Jugador <= 0)
-				{
-					Vida_Final_Jugador = 0;
-					Debug.Log("Gano el Enemigo");
-					Debug.Log("Vida Jugador: " + Vida_Final_Jugador);
-					Debug.Log("Vida Enemigo: " + Vida_Final_Enemigo);
-
-				}
-				if (Vida_Final_Enemigo <= 0)
-				{
-					Vida_Final_Enemigo = 0;
-					Debug.Log("Gano el jugador");
-					Debug.Log("Vida Jugador: " + Vida_Final_Jugador);
-					Debug.Log("Vida Enemigo: " + Vida_Final_Enemigo);
-				}
-
-				Jugador_2r = true;
-				Enemigo_1r = false;
+				Vida_Final_Enemigo = 0;
 			}
-			if (Jugador_2r)
+			Enemigo_2r = true;
+			Jugador_1r = false;
+		}
+		if (Enemigo_1r)
+		{
+			Enemigo_Ataque();
+			Vida_Final_Jugador = Vida_Final_Jugador - Dano_Final_Enemigo;
+
+			if (Vida_Final_Jugador <= 0)
 			{
-				Enemigo_Calcular_Vida();
-				Vida_Final_Enemigo = Vida_Final_Enemigo - Dano_Final_Jugador;
+				Vida_Final_Jugador = 0;
 
-
-				Dano_Final_Jugador = 0;
-				Dano_Final_Enemigo = 0;
-
-				Debug.Log("Vida Enemigo: " + Vida_Final_Enemigo);
-
-				Restar_Vida_Enemigo();
-
-				Jugador_2r = false;
 			}
-			if (Enemigo_2r)
+			if (Vida_Final_Enemigo <= 0)
 			{
-				Enemigo_Ataque();
-				Jugador_Calcular_Vida();
-				Vida_Final_Jugador = Vida_Final_Jugador - Dano_Final_Enemigo;
-
-				Dano_Final_Jugador = 0;
-				Dano_Final_Enemigo = 0;
-
-				Debug.Log("Vida Jugador: " + Vida_Final_Jugador);
-
-				Restar_Vida_Jugador();
-
-				Enemigo_2r = false;
+				Vida_Final_Enemigo = 0;
 			}
+			Jugador_2r = true;
+			Enemigo_1r = false;
+		}
+		if (Jugador_2r)
+		{
+			Vida_Final_Enemigo = Vida_Final_Enemigo - Dano_Final_Jugador;
+
+			Dano_Final_Jugador = 0;
+			Dano_Final_Enemigo = 0;
+
+			Jugador_2r = false;
+		}
+		if (Enemigo_2r)
+		{
+			Enemigo_Ataque();
+			Vida_Final_Jugador = Vida_Final_Jugador - Dano_Final_Enemigo;
+
+			Dano_Final_Jugador = 0;
+			Dano_Final_Enemigo = 0;
+
+			Enemigo_2r = false;
 		}
 	}
 }
