@@ -1,0 +1,2 @@
+C:\Users\darat\Documents\GitHub\RCodePG\Rpg_Demo\obj\Debug\Assembly-CSharp.csprojAssemblyReference.cache
+C:\Users\darat\Documents\GitHub\RCodePG\Rpg_Demo\obj\Debug\Assembly-CSharp.csproj.CoreCompileInputs.cache

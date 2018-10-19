@@ -106,6 +106,7 @@ public class Guardado_Json : ISerializationCallbackReceiver
 
 	public int Slot_ID_Guardat;
 
+	public int Idioma; // "0": ESPAÑOL  ,  "1": English
 
 	public int ID_Guardat;
 	public int ID_Enemigo_Guardat;
