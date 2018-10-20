@@ -2,10 +2,24 @@
 	"Traducion":
 	[
 		{
-		"Pulsa_Start":"PULSA START"
+		"Pulsa_Start":"PULSA START",
+		"Continuar":"CONTINUAR PARTIDA",
+		"Empezar":"EMPEZAR PARTIDA",
+		"Borrar_Menu":"BORRAR PARTIDA",
+		"Informacion_Menu":"INFORMACIÓN",
+		"Configuracion":"CONFIGURACIÓN"
+
+
 		},
 		{
-		"Pulsa_Start":"PRESS START"
+		"Pulsa_Start":"PRESS START",
+		"Continuar":"LOAD PROFILE",
+		"Empezar":"NEW PROFILE",
+		"Borrar_Menu":"DELETE PROFILE",
+		"Informacion_Menu":"INFORMATION",
+		"Configuracion":"CONFIGURATION"
+
+
 		}
 	]
 }

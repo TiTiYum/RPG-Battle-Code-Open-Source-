@@ -20,18 +20,31 @@ public class Traduccion : MonoBehaviour
 	[Serializable]
 	public class Traducion : ISerializationCallbackReceiver
 	{
-	// "0": ESPAÑOL
-	// "1": English
-	public string Pulsa_Start;
+	// "0": ESPAÑOL \\
+	// "1": ENGLISH \\
 
-	//Carteles
+	//MENU INICIO\\
+	public string Pulsa_Start;
+	public string Continuar;
+	public string Empezar;
+	public string Borrar_Menu;
+	public string Informacion_Menu;
+	public string Configuracion;
+
+
+	//Carteles\\
 	public string Cartel_0;
 	public string Cartel_1;
 	public string Cartel_2;
 	public string Cartel_3;
 
-	//NPC
 
+	//NPC\\
+	public string NPC_0;
+	public string NPC_1;
+	public string NPC_2;
+	public string NPC_3;
+	public string NPC_4;
 
 
 	void ISerializationCallbackReceiver.OnBeforeSerialize()

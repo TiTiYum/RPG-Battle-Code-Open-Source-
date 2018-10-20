@@ -2,7 +2,8 @@
 	"Guardat":
 	[
 	 {
-	 "Idioma":0,
+	 "Idioma":1,
+	 "Partida_Creada":true,
 	 "Slot_ID_Guardat":0,
 
 	 "ID_Guardat":0,
