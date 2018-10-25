@@ -42,7 +42,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1143523995259986
 GameObject:
   m_ObjectHideFlags: 0
@@ -60,7 +60,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1176642925272936
 GameObject:
   m_ObjectHideFlags: 1
@@ -536,6 +536,7 @@ GameObject:
   m_Component:
   - component: {fileID: 224718495736275618}
   - component: {fileID: 114752378165316296}
+  - component: {fileID: 114930403182878284}
   m_Layer: 5
   m_Name: Transfer
   m_TagString: Untagged
@@ -581,7 +582,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 224123470671839864}
-  - component: {fileID: 114951925802617794}
   m_Layer: 5
   m_Name: Anti_Borrado
   m_TagString: Untagged
@@ -754,6 +754,22 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1794720437330186
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4989635157200226}
+  - component: {fileID: 114111837513062166}
+  m_Layer: 0
+  m_Name: Datos_Mapas
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!1 &1795632091960788
 GameObject:
@@ -979,6 +995,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 224532341385097316}
   m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4989635157200226
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1794720437330186}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 224123470671839864}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &114001060137764260
 MonoBehaviour:
@@ -1272,6 +1301,20 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &114111837513062166
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1794720437330186}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2da279efea96883489d8d2f4012b88d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Maximo_Nivel_Enemigos: 15
+  Minimo_Nivel_Enemigos: 10
+  Nombre_Mapa: Pueblo Paloton
 --- !u!114 &114114746111767992
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2429,6 +2472,19 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: "Da\xF1:999"
+--- !u!114 &114930403182878284
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1543482486198404}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cede3d8fcade1814191d05887fd4901f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Traducion_Json_Final:
+    Traducion: []
 --- !u!114 &114947553772536118
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2481,17 +2537,6 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
---- !u!114 &114951925802617794
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1568143437477368}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e451424707f21a24f82310f4e4362541, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114957349245070772
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2884,7 +2929,7 @@ Canvas:
   m_PixelPerfect: 1
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
-  m_OverridePixelPerfect: 0
+  m_OverridePixelPerfect: 1
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 0
@@ -2919,6 +2964,7 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 4989635157200226}
   - {fileID: 224718495736275618}
   - {fileID: 224559870161400416}
   m_Father: {fileID: 0}
@@ -3313,7 +3359,7 @@ RectTransform:
   - {fileID: 224865725305624288}
   - {fileID: 224848900507988780}
   m_Father: {fileID: 224123470671839864}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -3571,7 +3617,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 224123470671839864}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}

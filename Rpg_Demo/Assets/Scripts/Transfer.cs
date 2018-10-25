@@ -108,6 +108,8 @@ public class Guardado_Json : ISerializationCallbackReceiver
 
 	public int Idioma; // "0": ESPAÑOL  ,  "1": English
 	public bool Partida_Creada;
+	public string Ultimo_mapa_Guardado;
+	public string Ultimo_mapa;
 
 	public int ID_Guardat;
 	public int ID_Enemigo_Guardat;

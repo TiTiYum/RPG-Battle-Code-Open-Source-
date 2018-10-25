@@ -61,11 +61,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\Batalla.cs" />
+    <Compile Include="Assets\Scripts\Batalla\Batalla.cs" />
+    <Compile Include="Assets\Scripts\Batalla\Movimientos_Enemigos.cs" />
     <Compile Include="Assets\Scripts\Datos_Mapa.cs" />
-    <Compile Include="Assets\Scripts\Inicio.cs" />
-    <Compile Include="Assets\Scripts\Jugador.cs" />
-    <Compile Include="Assets\Scripts\Movimientos_Enemigos.cs" />
+    <Compile Include="Assets\Scripts\Jugador\Jugador.cs" />
+    <Compile Include="Assets\Scripts\Menu\Inicio.cs" />
     <Compile Include="Assets\Scripts\Traduccion.cs" />
     <Compile Include="Assets\Scripts\Transfer.cs" />
     <Reference Include="UnityEditor.StandardEvents">
